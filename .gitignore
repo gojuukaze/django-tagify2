@@ -107,4 +107,4 @@ venv.bak/
 .idea/
 *.pyc
 *.sqlite3
-.static/
+.static/*
