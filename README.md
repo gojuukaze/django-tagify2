@@ -15,17 +15,15 @@ django tag input field
 * python3+
 * django 2.0+
 # Documentation
-+ [Installation](#Installation)
-+ [Usage](#Usage)
-  - [Quick Start](##QuickStart)
-  - [Using With Model Admin](##UsingWithModelAdmin)
-+ [Example](#Example)
++ [Installation](#installation)
++ [Usage](#usage)
+  - [Quick Start](#quick-start)
+  - [Using With Model Admin](#using-with-model-admin)
++ [Example](#example)
 
 
 
 # Installation
-<span id="Installation">Installation</span>  
-
 * download
 ```shell
 pip install django-ktag
@@ -51,8 +49,6 @@ TEMPLATES = [
 ```
 
 # Usage
-<span id="Usage">Usage</span>  
-
 ## Quick Start
 <span id="QuickStart"></span>
 **The form class**
@@ -105,7 +101,6 @@ The simplest example is:
 ```
 
 ## Using With Model Admin
-<span id="UsingWithModelAdmin"></span>
 ktag is not supported foreign key, so you have to do something by yourself
 here is a example:
 
@@ -203,7 +198,6 @@ class PeopleAdmin(MultipleChoiceAdmin):
 ```
 
 # Example
-<span id="Example"></span>
 run example
 ```shell
 git clone git@github.com:gojuukaze/django-ktag.git  
