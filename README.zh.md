@@ -19,7 +19,7 @@ django tag input field
 + [安装](#安装)
 + [使用](#使用)
   - [快速开始](#快速开始)
-  - [在Model的Admin使用](#在Model的Admin使用)
+  - [在Model与Admin使用](#在model与admin使用)
 + [参数表](#参数表)
 + [Example](#example)
 
@@ -101,8 +101,8 @@ def index(request):
 </form>
 ```
 
-## 在Model的Admin使用
-ktag 不支持外键（因为外键不好）  ，所以你必须自己保存关联表的数据等
+## 在Model与Admin使用
+ktag 不支持外键（因为外键不好），所以你必须自己保存关联表的数据等
 下面有个例子:
 
 * 编写两个model
