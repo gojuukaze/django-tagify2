@@ -145,10 +145,12 @@ class PeopleAdminForm(forms.ModelForm):
 ```
 * Building admin  
 
-the admin in example is a subclass of `ktag.admin.MultipleChoiceAdmin`
-   + `MultipleChoiceAdmin` can help you to bind value in admin
-   + bind value in `get_object()`
-   + save model in `save_model()`
+the admin in example is a subclass of `ktag.admin.MultipleChoiceAdmin`  
+
+> `MultipleChoiceAdmin` can help you to bind value in admin  
+> bind value in `get_object()`  
+> save model in `save_model()`  
+
 ```python
 
 from django.contrib import admin
