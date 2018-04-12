@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'ktag/js/tagify.min.js' %}"> </script>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <input type="submit" value="OK" style="font-size: larger">
+</form>
+</body>
+</html>
