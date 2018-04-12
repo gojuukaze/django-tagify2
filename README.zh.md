@@ -29,7 +29,8 @@ django tag input field
 * 下载
 ```shell
 pip install django-ktag
-
+or
+pip install --index-url https://pypi.org/simple/ django-ktag 
 ```
 
 * 把 'ktag' 加到 `INSTALLED_APPS`中
