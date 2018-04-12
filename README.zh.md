@@ -4,34 +4,37 @@
 
 
 django tag input field
+[中文README](https://github.com/gojuukaze/django-ktag/blob/master/README.zh.md)
+
 
 ![alt tag](https://github.com/gojuukaze/django-ktag/blob/master/demo.gif?raw=true)
 
-# Credits
-* js,css code uses [tagify](https://github.com/yairEO/tagify/blob/master/README.md)
+# 引用项目
+* js,css 代码使用了 [tagify](https://github.com/yairEO/tagify/blob/master/README.md)
 
-# Requirements
+# 依赖
 
 * python3+
 * django 2.0+
-# Documentation
-+ [Installation](#installation)
-+ [Usage](#usage)
-  - [Quick Start](#quick-start)
-  - [Using With Model Admin](#using-with-model-admin)
-+ [Field Arguments](#field-arguments)
+
+# 文档
++ [安装](#安装)
++ [使用](#使用)
+  - [快速开始](#快速开始)
+  - [在Model的Admin使用](#在Model的Admin使用)
++ [参数表](#参数表)
 + [Example](#example)
 
 
 
-# Installation
-* download
+# 安装
+* 下载
 ```shell
 pip install django-ktag
 
 ```
 
-* Add 'ktag' application to the INSTALLED_APPS
+* 把 'ktag' 加到 `INSTALLED_APPS`中
 
 ```python
 INSTALLED_APPS = [
@@ -39,7 +42,7 @@ INSTALLED_APPS = [
     'ktag',
 ]
 ```
-* Make sure `APP_DIRS` is True in TEMPLATES
+* 确定 TEMPLATES 中 `APP_DIRS` 为 True
 
 ```python
 TEMPLATES = [
@@ -49,12 +52,11 @@ TEMPLATES = [
 ]
 ```
 
-# Usage
-## Quick Start
-<span id="QuickStart"></span>
+# 使用
+## 快速开始
 **The form class**
 
-Building a form in Django like this:
+编写form类:
 
 ```python
 from django import forms
@@ -67,7 +69,7 @@ class TagForm(forms.Form):
 
 **The view**
 
-To handle the form we need to instantiate it in the view for the URL where we want it to be published:
+编写view:
 
 ```python
 
@@ -90,7 +92,7 @@ def index(request):
 
 **The template**
 
-The simplest example is:
+编写html模板 :
 
 ```python
 <form action="" method="post">
@@ -101,11 +103,11 @@ The simplest example is:
 </form>
 ```
 
-## Using With Model Admin
-ktag is not supported foreign key, so you have to do something by yourself
-here is a example:
+## 在Model的Admin使用
+ktag 不支持外键（因为外键不好）  ，所以你必须自己保存关联表的数据等
+下面有个例子:
 
-* Building 2 model
+* 编写两个model
 ```python
 from django.db import models
 
@@ -127,7 +129,7 @@ class PeopleFruits(models.Model):
     fruit = models.CharField(verbose_name='fruit', max_length=30)
 
 ```
-* Building form for admin
+* 编写admin的form
 
 ```python
 from django import forms
@@ -145,13 +147,14 @@ class PeopleAdminForm(forms.ModelForm):
 
 
 ```
-* Building admin  
+* 编写admin
 
-the admin in example is a subclass of `ktag.admin.MultipleChoiceAdmin`  
+在这里admin继承了 `ktag.admin.MultipleChoiceAdmin`
 
-> `MultipleChoiceAdmin` can help you to bind value in admin  
-> bind value in `get_object()`  
-> save model in `save_model()`  
+> `MultipleChoiceAdmin` 是我专门为tkag绑定数据写的
+> 在`get_object()`中绑定数据
+> 初始数据保存在`choice_field_value`中，他是一个dict，key是forms中field的名字，注意value是str不是list
+> 在`save_model()`中保存数据
 
 ```python
 
@@ -170,7 +173,7 @@ class PeopleAdmin(MultipleChoiceAdmin):
     def get_object(self, request, object_id, from_field=None):
         obj = super().get_object(request, object_id, from_field)
         """
-        filter fruits from PeopleFruits
+        根据你的需要，从PeopleFruits中筛选数据
         PeopleFruits.objects.filter(people_id=object_id)
         ...
         """
@@ -185,7 +188,7 @@ class PeopleAdmin(MultipleChoiceAdmin):
         print(fruits)
         for f in fruits:
             """
-            save PeopleFruits
+            保存fruits
             ...
             if xxx:
                 continue
@@ -195,20 +198,20 @@ class PeopleAdmin(MultipleChoiceAdmin):
             PeopleFruits(people_id=obj.id,fruit=f).save()
 
 ```
-# Field Arguments
+# 参数表
 
 Name                | Type       | Default     | Info
 ------------------- | ---------- | ----------- | --------------------------------------------------------------------------
-place_holder        | string     | ""          | placeholder
-delimiters          | string     | ","         | split tags by any of these delimiters. Example: Space or Coma - ", "
-data_list           | list       | []          | an array of tags which only they are allowed
-black_list          | list       | []          | an array of tags which aren't allowed
+place_holder        | string     | ""          | html input标签的展望符
+delimiters          | string     | ","         | 标签的分隔符号
+data_list           | list       | []          | 提示框的数据
+black_list          | list       | []          | 黑名单
 max_tags            | int        | None        | max number of tags
-suggestions_chars   | int        | 1           | minimum characters to input which shows the sugegstions list
+suggestions_chars   | int        | 1           | 输入多少字符后显示提示框
 
 
 # Example
-Run example
+运行栗子
 ```shell
 git clone git@github.com:gojuukaze/django-ktag.git  
 cd django-ktag
