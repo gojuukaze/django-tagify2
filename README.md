@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-ktag/blob/master/LICENSE)
 
 
-django tag input field
+django tag input field  
 [中文README](https://github.com/gojuukaze/django-ktag/blob/master/README.zh.md)
 
 ![alt tag](https://github.com/gojuukaze/django-ktag/blob/master/demo.gif?raw=true)
