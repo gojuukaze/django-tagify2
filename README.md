@@ -18,7 +18,7 @@ django tag input field
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Quick Start](##Quick)
-- [Using with model admin](##Using with model admin)
+- [Using with model admin](##Using)
 
 
 # Installation
