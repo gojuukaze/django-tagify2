@@ -19,7 +19,7 @@ django tag input field
 + [安装](#安装)
 + [使用](#使用)
   - [快速开始](#快速开始)
-  - [在Model与Admin使用](#在model与admin使用)
+  - [在Model与Admin使用](#在model与admin使用)
 + [参数表](#参数表)
 + [Example](#example)
 
