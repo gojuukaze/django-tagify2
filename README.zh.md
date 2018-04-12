@@ -4,8 +4,6 @@
 
 
 django tag input field
-[中文README](https://github.com/gojuukaze/django-ktag/blob/master/README.zh.md)
-
 
 ![alt tag](https://github.com/gojuukaze/django-ktag/blob/master/demo.gif?raw=true)
 
