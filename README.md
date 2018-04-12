@@ -24,7 +24,8 @@ django tag input field
 
 
 # Installation
-<span id="Installation"></span>
+<span id="Installation">Installation</span>  
+
 * download
 ```shell
 pip install django-ktag
@@ -50,7 +51,8 @@ TEMPLATES = [
 ```
 
 # Usage
-<span id="Usage"></span>
+<span id="Usage">Usage</span>  
+
 ## Quick Start
 <span id="QuickStart"></span>
 **The form class**
