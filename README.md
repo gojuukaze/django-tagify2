@@ -1,6 +1,6 @@
 # django-ktag
 [![GitHub version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://pypi.org/project/django-ktag/)
-[![License: GPL v3](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/gojuukaze/django-ktag/blob/master/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-ktag/blob/master/LICENSE)
 
 
 django tag input field
@@ -18,6 +18,7 @@ django tag input field
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Quick Start](##Quick)
+- [Using with model admin](##Using with model admin)
 
 
 # Installation
@@ -190,5 +191,15 @@ class PeopleAdmin(MultipleChoiceAdmin):
             """
             PeopleFruits(people_id=obj.id,fruit=f).save()
 
+```
 
+# example
+run example
+```shell
+git clone git@github.com:gojuukaze/django-ktag.git  
+cd django-ktag
+pip install django
+python manage.py makemigrations example 
+python manage.py migrate   
+python manage.py runserver 
 ```
