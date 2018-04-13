@@ -95,6 +95,7 @@ def index(request):
 The simplest example is:
 
 ```python
+ <script src="{% static 'ktag/js/tagify.min.js' %}"> </script>
 <form action="" method="post">
     {% csrf_token %}
     {{ form }}
