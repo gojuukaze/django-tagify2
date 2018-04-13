@@ -94,6 +94,7 @@ def index(request):
 编写html模板 :
 
 ```python
+<script src="{% static 'ktag/js/tagify.min.js' %}"> </script>
 <form action="" method="post">
     {% csrf_token %}
     {{ form }}
