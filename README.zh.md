@@ -151,10 +151,11 @@ class PeopleAdminForm(forms.ModelForm):
 
 在这里admin继承了 `ktag.admin.MultipleChoiceAdmin`
 
-> `MultipleChoiceAdmin` 是我专门为tkag绑定数据写的
-> 在`get_object()`中绑定数据
-> 初始数据保存在`choice_field_value`中，他是一个dict，key是forms中field的名字，注意value是str不是list
-> 在`save_model()`中保存数据
+> `MultipleChoiceAdmin` 是我专门为tkag绑定数据写的  
+> 在`get_object()`中绑定数据  
+> 初始数据保存在`choice_field_value`中，他是一个dict，key是forms中field的名字，注意value是str不是list  
+> 在`save_model()`中保存数据  
+> *!!! 重要：别忘了在`add_view()`中初始化数据 ！！！*  
 
 ```python
 
@@ -196,6 +197,12 @@ class PeopleAdmin(MultipleChoiceAdmin):
 
             """
             PeopleFruits(people_id=obj.id,fruit=f).save()
+
+
+    def add_view(self, request, form_url='', extra_context=None):
+        # !!! do not forget init in add_view !!!
+        self.choice_field_value={}
+        return super().add_view(request, form_url, extra_context)
 
 ```
 # 参数表
