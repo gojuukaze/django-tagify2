@@ -155,6 +155,7 @@ the admin in example is a subclass of `ktag.admin.MultipleChoiceAdmin`
 > `MultipleChoiceAdmin` can help you to bind value in admin  
 > bind value in `get_object()`  
 > save model in `save_model()`  
+> *!!! DO NOT FORGET INIT IN `add_view()` !!!*
 
 ```python
 
@@ -196,6 +197,11 @@ class PeopleAdmin(MultipleChoiceAdmin):
 
             """
             PeopleFruits(people_id=obj.id,fruit=f).save()
+
+    def add_view(self, request, form_url='', extra_context=None):
+        # !!! do not forget init in add_view !!!
+        self.choice_field_value={}
+        return super().add_view(request, form_url, extra_context)
 
 ```
 # Field Arguments
