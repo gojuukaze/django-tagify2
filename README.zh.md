@@ -206,6 +206,7 @@ data_list           | list       | []          | 提示框的数据
 black_list          | list       | []          | 黑名单
 max_tags            | int        | None        | max number of tags
 suggestions_chars   | int        | 1           | 输入多少字符后显示提示框
+data_list_func(v1.0.1+)| function | None       | 返回提示框数据的函数，用来动态生成提示框数据
 
 
 # Example

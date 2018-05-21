@@ -7,7 +7,7 @@ with open("README.rst", encoding='utf-8') as f:
 
 setup(
     name='django-ktag',
-    version='1.0.0',
+    version='1.0.1',
     description='django tag input field ',
     url='https://github.com/gojuukaze/django-ktag',
     author="gojuukaze",
