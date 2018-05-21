@@ -1,5 +1,5 @@
 # django-ktag
-[![GitHub version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://pypi.org/project/django-ktag/)
+[![GitHub version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://pypi.org/project/django-ktag/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-ktag/blob/master/LICENSE)
 
 
