@@ -211,11 +211,10 @@ Name                | Type       | Default     | Info
 ------------------- | ---------- | ----------- | --------------------------------------------------------------------------
 place_holder        | string     | ""          | html input标签的展望符
 delimiters          | string     | ","         | 标签的分隔符号
-data_list           | list|function | []          | 提示框的数据
+data_list           | list/function | []          | 提示框的数据
 black_list          | list       | []          | 黑名单
 max_tags            | int        | None        | max number of tags
 suggestions_chars   | int        | 1           | 输入多少字符后显示提示框
-
 
 # Example
 运行栗子

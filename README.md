@@ -210,11 +210,10 @@ Name                | Type       | Default     | Info
 ------------------- | ---------- | ----------- | --------------------------------------------------------------------------
 place_holder        | string     | ""          | placeholder
 delimiters          | string     | ","         | split tags by any of these delimiters. Example: Space or Coma - ", "
-data_list           | list|function | []          | an array of tags which they are allowed
+data_list           | list/function | []          | an array of tags which they are allowed
 black_list          | list       | []          | an array of tags which aren't allowed
 max_tags            | int        | None        | max number of tags
 suggestions_chars   | int        | 1           | minimum characters to input which shows the sugegstions list
-
 
 # Example
 Run example
