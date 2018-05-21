@@ -214,7 +214,7 @@ data_list           | list       | []          | an array of tags which they are
 black_list          | list       | []          | an array of tags which aren't allowed
 max_tags            | int        | None        | max number of tags
 suggestions_chars   | int        | 1           | minimum characters to input which shows the sugegstions list
-data_list_func(v1.0.1+)| function | None       | a function return an array
+data_list_func(v1.0.1+)| function | None       | a function return an array (see demo: example.views.data_list_func_test)
 
 
 # Example
