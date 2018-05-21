@@ -21,9 +21,9 @@ class PeopleAdminForm(forms.ModelForm):
 
 
 def random_number():
-    return [random.randint(1, 10), random.randint(1, 10), random.randint(1, 10), random.randint(1, 10)]
+    return [random.randint(10, 19), random.randint(10, 19), random.randint(10, 19), random.randint(10, 19), ]
 
 
 class dataListFuncTestForm(forms.Form):
     number = TagField(label='number', place_holder='write your number', delimiters=' ',
-                      data_list=['1', '2', '3', '4'], data_list_func=random_number)
+                      data_list=random_number)

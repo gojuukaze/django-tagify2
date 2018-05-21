@@ -7,7 +7,7 @@ from ktag.widgets import TagInput
 class TagField(forms.CharField):
     widget = TagInput
 
-    def __init__(self, *, place_holder='', delimiters=',', data_list=None, data_list_func=None,
+    def __init__(self, *, place_holder='', delimiters=',', data_list=None,
                  suggestions_chars=1, black_list=None, max_tags=None,
                  max_length=None, min_length=None, strip=True, empty_value='', **kwargs):
 
@@ -30,7 +30,6 @@ class TagField(forms.CharField):
         ktag_args['suggestionsMinChars'] = suggestions_chars
         ktag_args['blacklist'] = black_list if black_list else []
         ktag_args['maxTags'] = max_tags
-        ktag_args['whitelistFunc'] = data_list_func
 
         setattr(self.widget, 'ktag_args', ktag_args)
 
