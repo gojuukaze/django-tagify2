@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="{% static 'ktag/js/tagify.min.js' %}"> </script>
+    {{ form.media }}
 </head>
 <body>
 <form action="" method="post">
     {% csrf_token %}
     {{ form }}
     <br>
-    <input type="submit" value="OK" style="font-size: larger">
+    <button type="submit" style="font-size: 20px;background: cornflowerblue;color: #fff">submit</button>
 </form>
 </body>
 </html>

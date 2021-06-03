@@ -6,16 +6,16 @@ with open("README.rst", encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='django-ktag',
-    version='1.0.3',
-    description='django tag input field ',
-    url='https://github.com/gojuukaze/django-ktag',
+    name='django-tagify2',
+    version='1.0.4',
+    description='django tag input field using tagify.js',
+    url='https://github.com/gojuukaze/django-tagify2',
     author="gojuukaze",
-    author_email="i@ikaze.uu.me",
+    author_email="ikaze_email@163.com",
 
     long_description=long_description,
     license="GUN V3.0",
-    packages=find_packages(exclude=['django_ktag*', 'example*', ]),
+    packages=find_packages(exclude=['django_tagify*', 'example*', ]),
 
     install_requires=[
         'Django>=2.0.0',
