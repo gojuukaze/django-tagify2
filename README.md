@@ -1,11 +1,11 @@
 # django-tagify2
 
-[![GitHub version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://pypi.org/project/django-tagify2/)
+[![GitHub version](https://img.shields.io/badge/version-1.0.4-blue.svg)](https://pypi.org/project/django-tagify2/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-tagify2/blob/master/LICENSE)
 
 django tag input field  
 
-![alt tag](https://github.com/gojuukaze/django-tagify2/blob/master/demo.gif?raw=true)
+![alt tag](https://github.com/gojuukaze/django-tagify2/blob/master/demo2.gif?raw=true)
 
 # Credits
 
