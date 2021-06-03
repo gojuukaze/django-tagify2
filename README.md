@@ -32,7 +32,7 @@ django tag input field
 ```shell
 pip install django-tagify2
 or
-pip install --index-url https://pypi.org/simple/django-tagify2 
+pip install --index-url https://pypi.org/simple/ django-tagify2 
 ```
 
 * Add 'tagify' application to the INSTALLED_APPS

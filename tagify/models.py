@@ -17,10 +17,7 @@ class TagField(models.Field):
         self.tag_args['max_tags'] = max_tags
 
     def get_internal_type(self):
-        return "CharField"
-
-    def get_prep_value(self, value):
-        return self.delimiters.join(value)
+        return "TextField"
 
     def get_db_prep_value(self, value, connection, prepared=False):
         return self.delimiters.join(value)

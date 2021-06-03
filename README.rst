@@ -5,7 +5,7 @@ django-tagify2
 
 django tag input field
 
-.. figure:: https://github.com/gojuukaze/django-tagify2/blob/master/demo.gif?raw=true
+.. figure:: https://github.com/gojuukaze/django-tagify2/blob/master/demo2.gif?raw=true
    :alt: alt tag
 
    alt tag
@@ -42,7 +42,7 @@ Installation
 
    pip install django-tagify2
    or
-   pip install --index-url https://pypi.org/simple/django-tagify2
+   pip install --index-url https://pypi.org/simple/ django-tagify2
 
 -  Add ‘tagify’ application to the INSTALLED_APPS
 
