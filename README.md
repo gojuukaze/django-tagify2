@@ -1,10 +1,9 @@
 # django-tagify2
 
 [![GitHub version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://pypi.org/project/django-tagify2/)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-tagify/blob/master/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-tagify2/blob/master/LICENSE)
 
 django tag input field  
-[中文README](https://github.com/gojuukaze/django-tagify2/blob/master/README.zh.md)
 
 ![alt tag](https://github.com/gojuukaze/django-tagify2/blob/master/demo.gif?raw=true)
 
@@ -59,7 +58,6 @@ TEMPLATES = [
 
 ## Quick Start
 
-<span id="QuickStart"></span>
 **The form class**
 
 Building a form in Django like this:

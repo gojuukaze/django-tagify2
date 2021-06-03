@@ -1,11 +1,11 @@
-django-tagify
-=============
+django-tagify2
+==============
 
 |GitHub version| |License: GPL v3|
 
-| django tag input field
+django tag input field
 
-.. figure:: https://github.com/gojuukaze/django-tagify/blob/master/demo.gif?raw=true
+.. figure:: https://github.com/gojuukaze/django-tagify2/blob/master/demo.gif?raw=true
    :alt: alt tag
 
    alt tag
@@ -19,7 +19,11 @@ Requirements
 ============
 
 -  python3+
--  django 2.0+ (maybe 1.x) # Documentation
+-  django 2.0+ (maybe 1.x)
+
+Documentation
+=============
+
 -  `Installation`_
 -  `Usage`_
 
@@ -36,9 +40,9 @@ Installation
 
 .. code:: shell
 
-   pip install django-tagify
+   pip install django-tagify2
    or
-   pip install --index-url https://pypi.org/simple/ django-tagify
+   pip install --index-url https://pypi.org/simple/django-tagify2
 
 -  Add ‘tagify’ application to the INSTALLED_APPS
 
@@ -56,7 +60,7 @@ Installation
    TEMPLATES = [
        ...
        'APP_DIRS': True,
-       ...
+                   ...
    ]
 
 Usage
@@ -74,9 +78,29 @@ Building a form in Django like this:
    from django import forms
    from tagify.fields import TagField
 
+
    class TagForm(forms.Form):
-       fruits = TagField(label='fruits', place_holder='write your fruits', delimiters=' ',
-                             data_list=['apple', 'banana', 'watermelon', 'orange'], initial='grape coconut')
+       languages = TagField(label='languages', place_holder='add a language', delimiters=' ',
+                            data_list=['Python', 'Java', 'PHP', 'Golang', 'JavaScript'], initial='Python Golang')
+
+
+   # or
+   def random_number():
+       return [random.randint(10, 19), random.randint(10, 19), random.randint(10, 19), random.randint(10, 19), ]
+
+
+   class NumberForm(forms.Form):
+       number = TagField(label='number', place_holder='add a number', delimiters=' ',
+                         data_list=random_number)
+
+
+   # or
+   class TagForm(forms.Form):
+       languages = TagField(label='languages', place_holder='add a language', delimiters=' ', )
+
+       def __init__(self, *args, **kwargs):
+           super().__init__(*args, **kwargs)
+           self.fields['languages'].set_tag_args('data_list', get_languages())
 
 **The view**
 
@@ -85,19 +109,17 @@ where we want it to be published:
 
 .. code:: python
 
-
    from django.http import HttpResponse
    from django.shortcuts import render
 
    from example.forms import TagForm
 
+
    def index(request):
        if request.method == 'POST':
            form = TagForm(request.POST)
-              if form.is_valid():
-                   print(form.cleaned_data['fruits'])
-                   return HttpResponse(str(form.cleaned_data['fruits']))
-
+           if form.is_valid():
+               return HttpResponse(str(form.cleaned_data['languages']))
        else:
            form = TagForm()
        return render(request, 'index.html', {'form': form})
@@ -106,40 +128,30 @@ where we want it to be published:
 
 The simplest example is:
 
-.. code:: python
+.. code:: html
 
-    <script src="{% static 'tagify/js/tagify.min.js' %}"> </script>
-   <form action="" method="post">
-       {% csrf_token %}
-       {{ form }}
-       <br>
-       <input type="submit" value="OK">
-   </form>
 
-Using With Model Admin
-----------------------
+   <head>
+       {{ form.media }}
+   </head>
+   <body>
+     <form action="" method="post">
+         {% csrf_token %}
+         {{ form }}
+         <br>
+         <input type="submit" value="OK">
+     </form>
+   </body>
 
-tagify is not supported foreign key, so you have to do something by
-yourself here is a example:
+Using With Model
+----------------
 
--  Building 2 model \```python from django.db import models
+\```python from django.db import models
 
-class People(models.Model): class Meta: verbose_name = ‘People’
-verbose_name_plural = ‘People’
+from tagify.models import TagField
 
-::
+class People(models.Model): name = models.Cha
 
-   name = models.CharField(verbose_name='name', max_length=20)
-
-class PeopleFruits(models.Model): class Meta: verbose_name =
-‘People-Fruits’ verbose_name_plural = ‘People-Fruits’
-
-::
-
-   people_id = models.IntegerField(verbose_name='people_id')
-   fruit = models.CharField(verbose_name='fru
-
-.. _中文README: https://github.com/gojuukaze/django-tagify/blob/master/README.zh.md
 .. _tagify: https://github.com/yairEO/tagify
 .. _Installation: #installation
 .. _Usage: #usage
@@ -148,7 +160,7 @@ class PeopleFruits(models.Model): class Meta: verbose_name =
 .. _Field Arguments: #field-arguments
 .. _Example: #example
 
-.. |GitHub version| image:: https://img.shields.io/badge/version-1.0.4-blue.svg
-   :target: https://pypi.org/project/django-tagify/
+.. |GitHub version| image:: https://img.shields.io/badge/version-1.0.3-blue.svg
+   :target: https://pypi.org/project/django-tagify2/
 .. |License: GPL v3| image:: https://img.shields.io/badge/License-GPL%20V3-blue.svg
-   :target: https://github.com/gojuukaze/django-tagify/blob/master/LICENSE
+   :target: https://github.com/gojuukaze/django-tagify2/blob/master/LICENSE
