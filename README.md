@@ -5,7 +5,7 @@
 
 django tag input field using [tagify](https://github.com/yairEO/tagify)
 
-![alt tag](https://github.com/gojuukaze/django-tagify2/blob/master/demo2.gif?raw=true)
+![alt tag](demo2.gif)
 
 
 
