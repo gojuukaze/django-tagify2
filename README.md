@@ -19,7 +19,7 @@ django tag input field using [tagify](https://github.com/yairEO/tagify)
 + [Installation](#installation)
 + [Usage](#usage)
     - [Quick Start](#quick-start)
-    - [Using With Model Admin](#using-with-model-admin)
+    - [Using With Model Admin](#using-with-model)
 + [Field Arguments](#field-arguments)
 + [Example](#example)
 
