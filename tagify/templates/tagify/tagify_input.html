@@ -1,10 +1,12 @@
-<input placeholder="{{widget.tag_args.placeholder}}" autocomplete="off" type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %} />
+<input placeholder="{{ widget.tag_args.placeholder }}" autocomplete="off" type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %}
+       value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %} />
 <script>
-    new Tagify(document.querySelector('input[name={{widget.name}}]'), {
-    delimiters:"{{widget.tag_args.delimiters}}",
-    whitelist : {{widget.tag_args.whitelist|safe}},
-    suggestionsMinChars:{{widget.tag_args.suggestionsMinChars}},
-    blacklist:{{widget.tag_args.blacklist|safe}},
-    {% if widget.tag_args.maxTags != None %}maxTags:{{widget.tag_args.maxTags}}{%endif%}
+    {% if widget.var_name != None %} var {{widget.var_name}} = {% endif %}  new Tagify(document.querySelector('input[name={{widget.name}}]'), {
+        delimiters: "{{widget.tag_args.delimiters}}",
+        pattern: {{widget.tag_args.pattern}},
+        whitelist: {{widget.tag_args.whitelist|safe}},
+        suggestionsMinChars:{{widget.tag_args.suggestionsMinChars}},
+        blacklist:{{widget.tag_args.blacklist|safe}},
+        {% if widget.tag_args.maxTags != None %}maxTags:{{widget.tag_args.maxTags}}{%endif%}
     })
 </script>
