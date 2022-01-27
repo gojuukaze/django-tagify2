@@ -1,7 +1,7 @@
 <input placeholder="{{ widget.tag_args.placeholder }}" autocomplete="off" type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %}
        value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %} />
 <script>
-    {% if widget.var_name != None %} var {{widget.var_name}} = {% endif %}  new Tagify(document.querySelector('input[name={{widget.name}}]'), {
+    {% if widget.var_name %} var {{widget.var_name}} = {% endif %}  new Tagify(document.querySelector('input[name={{widget.name}}]'), {
         delimiters: "{{widget.tag_args.delimiters}}",
         pattern: {{widget.tag_args.pattern}},
         whitelist: {{widget.tag_args.whitelist|safe}},
