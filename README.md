@@ -171,6 +171,12 @@ git clone git@github.com:gojuukaze/django-tagify2.git
 cd django-tagify2
 pip install django
 python manage.py makemigrations example 
+python manage.py createsuperuser
 python manage.py migrate   
 python manage.py runserver 
+
+# open
+# http://127.0.0.1:8000
+# http://127.0.0.1:8000/number
+# http://127.0.0.1:8000/admin/example/people/1/change/
 ```
