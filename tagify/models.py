@@ -27,7 +27,7 @@ class TagField(models.TextField):
     def to_python(self, value):
         if isinstance(value, list):
             return value
-        if value is None:
+        if not value:
             return []
         return value.split(self.delimiters)
 
