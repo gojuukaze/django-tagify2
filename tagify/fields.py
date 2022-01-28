@@ -42,8 +42,8 @@ class TagField(forms.CharField):
 
     def to_python(self, value):
         value = super().to_python(value)
-        return [v['value'] for v in json.loads(value)]
-        # return value.split(self.delimiters)
+        # return [v['value'] for v in json.loads(value)]
+        return value.split(self.delimiters)
 
     def set_var_name(self, value):
 
