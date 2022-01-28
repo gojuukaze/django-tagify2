@@ -15,9 +15,7 @@ class TagInput(forms.TextInput):
         if not value:
             return ''
         if isinstance(value, list):
-            tag_args = getattr(self, "tag_args", {})
-            delimiters = getattr(tag_args, 'delimiters', ' ')
-            return delimiters.join(value)
+            return self.attrs["delimiters"].join(value)
         return super(TagInput, self).format_value(value)
 
     def get_context(self, name, value, attrs):

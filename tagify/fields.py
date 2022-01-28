@@ -18,6 +18,8 @@ class TagField(forms.CharField):
         self.min_length = min_length
         self.strip = strip
         self.empty_value = empty_value
+        self.delimiters = delimiters
+
         super().__init__(**kwargs)
 
         if min_length is not None:
@@ -26,7 +28,6 @@ class TagField(forms.CharField):
             self.validators.append(validators.MaxLengthValidator(int(max_length)))
         self.validators.append(validators.ProhibitNullCharactersValidator())
 
-        self.delimiters = delimiters
         tag_args = {}
         tag_args['placeholder'] = place_holder
         tag_args['delimiters'] = delimiters
@@ -51,3 +52,9 @@ class TagField(forms.CharField):
     def set_tag_args(self, key, value):
         key = NameDict.get(key, key)
         self.widget.tag_args[key] = value
+
+    def widget_attrs(self, widget):
+        # todo: 把init中的属性移到这
+        attrs = super(TagField, self).widget_attrs(widget)
+        attrs['delimiters'] = self.delimiters
+        return attrs
