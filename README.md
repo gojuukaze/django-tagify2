@@ -178,5 +178,5 @@ python manage.py runserver
 # open
 # http://127.0.0.1:8000
 # http://127.0.0.1:8000/number
-# http://127.0.0.1:8000/admin/example/people/1/change/
+# http://127.0.0.1:8000/admin/example/people/
 ```
