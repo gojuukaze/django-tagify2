@@ -11,6 +11,15 @@ class TagInput(forms.TextInput):
     tag_args = {}
     var_name = None
 
+    def format_value(self, value):
+        if not value:
+            return ''
+        if isinstance(value, list):
+            tag_args = getattr(self, "tag_args", {})
+            delimiters = getattr(tag_args, 'delimiters', ' ')
+            return delimiters.join(value)
+        return super(TagInput, self).format_value(value)
+
     def get_context(self, name, value, attrs):
         context = super().get_context(name, value, attrs)
         context["widget"]["type"] = self.input_type

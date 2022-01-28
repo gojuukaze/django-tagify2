@@ -160,7 +160,7 @@ class People(models.Model): name = models.Cha
 .. _Field Arguments: #field-arguments
 .. _Example: #example
 
-.. |GitHub version| image:: https://img.shields.io/badge/version-1.0.3-blue.svg
+.. |GitHub version| image:: https://img.shields.io/badge/version-1.0.14-blue.svg
    :target: https://pypi.org/project/django-tagify2/
 .. |License: GPL v3| image:: https://img.shields.io/badge/License-GPL%20V3-blue.svg
    :target: https://github.com/gojuukaze/django-tagify2/blob/master/LICENSE
