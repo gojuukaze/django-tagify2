@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class TagField(models.Field):
+class TagField(models.TextField):
 
     def __init__(self, place_holder='', delimiters=' ', data_list=None, pattern='', var_name='',
                  suggestions_chars=1, black_list=None, max_tags=None, *args, **kwargs):
@@ -21,10 +21,27 @@ class TagField(models.Field):
     def get_internal_type(self):
         return "TextField"
 
+    def from_db_value(self, value, expression, connection):
+        return self.to_python(value)
+
+    def to_python(self, value):
+        if isinstance(value, list):
+            return value
+        if value is None:
+            return []
+        return value.split(self.delimiters)
+
     def get_db_prep_value(self, value, connection, prepared=False):
-        value = self.delimiters.join(value)
-        return super(TagField, self).get_db_prep_value(value, connection, prepared)
+
+        return self.delimiters.join(value)
+
+    def get_prep_value(self, value):
+        return self.delimiters.join(value)
 
     def formfield(self, **kwargs):
         from tagify.fields import TagField as FormTagField
-        return super().formfield(form_class=FormTagField, **self.tag_args)
+        return super(models.TextField, self).formfield(form_class=FormTagField, **self.tag_args)
+
+    def value_to_string(self, obj):
+        value = self.value_from_object(obj)
+        return self.get_prep_value(value)
