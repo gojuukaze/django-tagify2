@@ -1,6 +1,6 @@
 # django-tagify2
 
-[![GitHub version](https://img.shields.io/badge/version-1.0.4-blue.svg)](https://pypi.org/project/django-tagify2/)
+[![GitHub version](https://img.shields.io/badge/version-1.0.12-blue.svg)](https://pypi.org/project/django-tagify2/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20V3-blue.svg)](https://github.com/gojuukaze/django-tagify2/blob/master/LICENSE)
 
 django tag input field using [tagify](https://github.com/yairEO/tagify)
