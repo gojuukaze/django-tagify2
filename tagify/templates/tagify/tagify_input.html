@@ -5,8 +5,8 @@
     {% if widget.tag_args.var_name %}
         var {{widget.tag_args.var_name}} = {% endif %}  new Tagify(document.querySelector('input[name={{widget.name}}]'),
         {
-        {% if widget.tag_args.maxTags != None %}args.maxTags={{widget.tag_args.maxTags}},{%endif%}
-        {% if widget.tag_args.pattern %}args.pattern=/{{widget.tag_args.pattern}}/,{%endif%}
+        {% if widget.tag_args.maxTags != None %}maxTags:{{widget.tag_args.maxTags}},{%endif%}
+        {% if widget.tag_args.pattern %}pattern:/{{widget.tag_args.pattern}}/,{%endif%}
         delimiters: "{{widget.tag_args.delimiters}}",
         whitelist: {{widget.tag_args.whitelist|safe}},
         suggestionsMinChars:{{widget.tag_args.suggestionsMinChars}},
